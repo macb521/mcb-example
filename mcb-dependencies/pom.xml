@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>mcb-dependencies</artifactId>
+    <version>2023.0.1</version>
+    <packaging>pom</packaging>
+    <description>
+        依赖包管理
+        说明: 项目中引入的第三方包，统一在mcb-dependencies模块的pom.xml中进行版本管理，在模块使用时无需添加版本
+        1. 版本管理，统一将版本号添加到properties标签中
+        2.
+        包引入时，最好添加项目的maven地址，方便后期维护，例如 <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
+    </description>
+    <properties>
+        <!-- Spring Boot 版本 -->
+        <spring.boot.version>2.7.4</spring.boot.version>
+        <!-- Spring Cloud 版本 -->
+        <spring.cloud.version>2021.0.3</spring.cloud.version>
+
+        <fastjson.version>1.2.73</fastjson.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.20.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
