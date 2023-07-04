@@ -11,6 +11,8 @@
         <option value="$PROJECT_DIR$/mcb-design/pom.xml" />
         <option value="$PROJECT_DIR$/mcb-refactor/pom.xml" />
         <option value="$PROJECT_DIR$/mcb-test/pom.xml" />
+        <option value="$PROJECT_DIR$/mcb-common/pom.xml" />
+        <option value="$PROJECT_DIR$/mcb-parent/pom.xml" />
       </list>
     </option>
   </component>

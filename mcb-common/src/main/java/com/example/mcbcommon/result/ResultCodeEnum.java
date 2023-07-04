@@ -1,4 +1,4 @@
-package com.example.design.global;
+package com.example.mcbcommon.result;
 
 /**
  * @author chunbo.ma.o
@@ -33,9 +33,11 @@ public enum ResultCodeEnum implements ResultCode{
         this.message = message;
     }
 
+    @Override
     public String getCode() {
         return this.code;
     }
+    @Override
 
     public String getMessage() {
         return this.message;

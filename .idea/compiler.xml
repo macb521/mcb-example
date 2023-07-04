@@ -7,20 +7,24 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mcb-design" />
+        <module name="mcb-common" />
         <module name="mcb-refactor" />
+        <module name="mcb-design" />
         <module name="mcb-test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="mcb-common" target="1.8" />
       <module name="mcb-dependencies" target="1.5" />
       <module name="mcb-design" target="1.8" />
+      <module name="mcb-parent" target="1.8" />
       <module name="mcb-refactor" target="1.8" />
       <module name="mcb-test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="mcb-common" options="" />
       <module name="mcb-dependencies" options="" />
       <module name="mcb-design" options="" />
       <module name="mcb-refactor" options="" />

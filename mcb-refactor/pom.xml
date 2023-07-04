@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>mcb-dependencies</artifactId>
-        <version>2023.0.1</version>
+        <artifactId>mcb-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>mcb-refactor</artifactId>
     <version>0.0.1-SNAPSHOT</version>

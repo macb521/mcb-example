@@ -1,4 +1,4 @@
-package com.example.design.global;
+package com.example.mcbcommon.result;
 
 /**
  * @author chunbo.ma.o
