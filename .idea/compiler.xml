@@ -9,12 +9,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="mcb-design" />
         <module name="mcb-refactor" />
+        <module name="mcb-test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mcb-dependencies" target="1.5" />
       <module name="mcb-design" target="1.8" />
       <module name="mcb-refactor" target="1.8" />
+      <module name="mcb-test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
