@@ -2,6 +2,7 @@ package com.example.mcbtest.controller;
 
 import com.example.mcbcommon.result.RespResult;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class TestController {
 
+    @GetMapping("test")
+    public RespResult<String> test (){
+        return RespResult.success("hellow word!");
+    }
 
 
 }
