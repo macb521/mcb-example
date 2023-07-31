@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: test
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:3306/userdb?characterEncoding=utf-8&&severTimezone=utc
+    username: root
+    password: root
+  thymeleaf:
+    mode: HTML5
+    cache: false
+    suffix: .html
+    prefix: classpath:/templates/
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml   #引入mapper文件
+  type-aliases-package: com.bdqn.springsso.pojo  #引入类型别名

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/design-master/pom.xml" />
+        <option value="$PROJECT_DIR$/refactor/pom.xml" />
+        <option value="$PROJECT_DIR$/design/pom.xml" />
+        <option value="$PROJECT_DIR$/dependencies/pom.xml" />
+        <option value="$PROJECT_DIR$/mcb-dependencies/pom.xml" />
+        <option value="$PROJECT_DIR$/mcb-design/pom.xml" />
+        <option value="$PROJECT_DIR$/mcb-refactor/pom.xml" />
+        <option value="$PROJECT_DIR$/mcb-test/pom.xml" />
+        <option value="$PROJECT_DIR$/mcb-common/pom.xml" />
+        <option value="$PROJECT_DIR$/mcb-parent/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>
