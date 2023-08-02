@@ -1,16 +1,22 @@
 package com.example.design.mode.action.cor;
+/**
+ * @author chunbo.ma.o
+ */
+public class DepartmentHead extends AbstractLeader {
 
-public class DepartmentHead extends Leader {
+    public static final int INT = 7;
 
     public DepartmentHead(String name) {
         super(name);
     }
 
-    public void handleRequest(LeaveNode LeaveNode) {
-        if (LeaveNode.getNumber() <= 7) {   //小于7天系主任审批
-            System.out.println("系主任" + name + "审批" + LeaveNode.getPerson() + "同学的请假条,请假天数为" + LeaveNode.getNumber() + "天。");
+    @Override
+    public void handleRequest(LeaveNode leaveNode) {
+        //小于7天系主任审批
+        if (leaveNode.getNumber() <= INT) {
+            System.out.println("系主任" + name + "审批" + leaveNode.getPerson() + "同学的请假条,请假天数为" + leaveNode.getNumber() + "天。");
         } else if (this.successor != null) {
-            this.successor.handleRequest(LeaveNode);
+            this.successor.handleRequest(leaveNode);
         }
 
     }
