@@ -5,10 +5,10 @@
     <parent>
         <groupId>com.example</groupId>
         <artifactId>mcb-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1-RELEASE</version>
     </parent>
     <artifactId>mcb-design</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1-RELEASE</version>
     <name>design</name>
     <description>Demo project for Spring Boot</description>
     <properties>

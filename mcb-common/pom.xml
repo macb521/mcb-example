@@ -5,10 +5,10 @@
 	<parent>
 		<groupId>com.example</groupId>
 		<artifactId>mcb-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1-RELEASE</version>
 	</parent>
 	<artifactId>mcb-common</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1-RELEASE</version>
 	<name>mcb-common</name>
 	<description>mcb-common</description>
 	<packaging>jar</packaging>

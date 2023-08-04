@@ -5,7 +5,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>mcb-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1-RELEASE</version>
     <packaging>pom</packaging>
     <name>mcb-parent</name>
     <description>mcb-parent</description>

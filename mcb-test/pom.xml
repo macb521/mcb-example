@@ -5,15 +5,15 @@
     <parent>
         <groupId>com.example</groupId>
         <artifactId>mcb-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1-RELEASE</version>
     </parent>
     <artifactId>mcb-test</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1-RELEASE</version>
     <name>mcb-test</name>
     <description>mcb-test</description>
     <properties>
         <java.version>1.8</java.version>
-        <mcb-common.version>0.0.1-SNAPSHOT</mcb-common.version>
+        <mcb-common.version>0.0.1-RELEASE</mcb-common.version>
     </properties>
     <dependencies>
         <dependency>
