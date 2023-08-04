@@ -1,0 +1,14 @@
+server:
+  port: 10087
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          configuration:
+            key-serializer: org.apache.kafka.common.serialization.StringSerializer
+            value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      bindings:
+        test-in-0:
+          destination: test-topic
