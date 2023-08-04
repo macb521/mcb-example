@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	    <parent>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
         <groupId>com.example</groupId>
         <artifactId>mcb-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-	<groupId>com.example</groupId>
-	<artifactId>io-consumer</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>io-consumer</name>
-	<description>io-consumer</description>
-	 <properties>
+    <artifactId>io-consumer</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>io-consumer</name>
+    <description>io-consumer</description>
+    <properties>
         <java.version>1.8</java.version>
     </properties>
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
-	<build>
+    <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>

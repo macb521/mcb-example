@@ -7,6 +7,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="io-consumer" />
+        <module name="io-producer" />
         <module name="mcb-common" />
         <module name="mcb-refactor" />
         <module name="mcb-design" />
@@ -14,6 +16,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="io-consumer" target="1.8" />
+      <module name="io-producer" target="1.8" />
       <module name="mcb-common" target="1.8" />
       <module name="mcb-dependencies" target="1.5" />
       <module name="mcb-design" target="1.8" />
