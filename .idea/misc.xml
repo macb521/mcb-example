@@ -7,7 +7,6 @@
         <option value="$PROJECT_DIR$/refactor/pom.xml" />
         <option value="$PROJECT_DIR$/design/pom.xml" />
         <option value="$PROJECT_DIR$/dependencies/pom.xml" />
-        <option value="$PROJECT_DIR$/mcb-dependencies/pom.xml" />
         <option value="$PROJECT_DIR$/mcb-design/pom.xml" />
         <option value="$PROJECT_DIR$/mcb-refactor/pom.xml" />
         <option value="$PROJECT_DIR$/mcb-test/pom.xml" />

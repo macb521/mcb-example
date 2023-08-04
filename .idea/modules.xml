@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/io-consumer/io-consumer.iml" filepath="$PROJECT_DIR$/io-consumer/io-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/io-producer/io-producer.iml" filepath="$PROJECT_DIR$/io-producer/io-producer.iml" />
       <module fileurl="file://$PROJECT_DIR$/mcb-common/mcb-common.iml" filepath="$PROJECT_DIR$/mcb-common/mcb-common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mcb-dependencies/mcb-dependencies.iml" filepath="$PROJECT_DIR$/mcb-dependencies/mcb-dependencies.iml" />
       <module fileurl="file://$PROJECT_DIR$/mcb-design/mcb-design.iml" filepath="$PROJECT_DIR$/mcb-design/mcb-design.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/mcb-example.iml" filepath="$PROJECT_DIR$/.idea/mcb-example.iml" />
       <module fileurl="file://$PROJECT_DIR$/mcb-parent/mcb-parent.iml" filepath="$PROJECT_DIR$/mcb-parent/mcb-parent.iml" />
