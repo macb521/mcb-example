@@ -5,6 +5,7 @@ import com.example.test.domain.mapper.VtsAttachmentMapper;
 import com.example.test.service.VtsAttachmentService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * <p>
@@ -17,4 +18,32 @@ import org.springframework.stereotype.Service;
 @Service
 public class VtsAttachmentServiceImpl extends ServiceImpl<VtsAttachmentMapper, VtsAttachment> implements VtsAttachmentService {
 
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public Long saveTest() {
+        VtsAttachment vtsAttachment = new VtsAttachment();
+        vtsAttachment.setType(1);
+        vtsAttachment.setRelationId(1111L);
+        vtsAttachment.setName("11");
+        vtsAttachment.setContent("1111");
+        vtsAttachment.setSource(1);
+
+        save(vtsAttachment);
+
+        System.out.println(saveTestInner());
+        return vtsAttachment.getId();
+    }
+
+    private Long saveTestInner (){
+        VtsAttachment vtsAttachment = new VtsAttachment();
+        vtsAttachment.setType(2);
+        vtsAttachment.setRelationId(2222L);
+        vtsAttachment.setName("22");
+        vtsAttachment.setContent("2222");
+        vtsAttachment.setSource(2);
+
+        save(vtsAttachment);
+
+        return vtsAttachment.getId();
+    }
 }

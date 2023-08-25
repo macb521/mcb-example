@@ -1,65 +1,47 @@
-package com.example.test.domain.entity;
+package com.example.test.req;
 
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.example.test.base.BaseModel;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.experimental.Accessors;
+import io.swagger.models.auth.In;
+import lombok.Data;
 
 /**
- * <p>
- * 附件表
- * </p>
- *
- * @author chunbo.ma
- * @since 2023-08-10
+ * @author chunbo.ma.o
+ * @since 2023/8/14
  */
-@Getter
-@Setter
-@Accessors(chain = true)
-@TableName("ps_vts_attachment")
-public class VtsAttachment extends BaseModel {
-
+@Data
+public class VtsAttachmentReq {
     /**
      * 类型: 1. 基础vts test_procedure_attachment
      */
-    @TableField("type")
     private Integer type;
 
     /**
      * 日志对应主表的数据记录id, 不同类型对应不同的relationId，
      */
-    @TableField("relation_id")
     private Long relationId;
 
     /**
      * 文件name
      */
-    @TableField("name")
     private String name;
 
     /**
      * 文件大小
      */
-    @TableField("file_size")
     private Long fileSize;
 
     /**
      * 文件mode
      */
-    @TableField("file_mode")
     private String fileMode;
 
     /**
      * 10：输入的url；20: ps-storage数据url
      */
-    @TableField("content")
     private String content;
 
     /**
      * 10. 手动输入的数据；20. ps-storage的数据
      */
-    @TableField("source")
     private Integer source;
 }

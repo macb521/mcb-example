@@ -4,10 +4,7 @@ import com.example.mcbcommon.result.RespResult;
 import com.example.test.domain.entity.VtsAttachment;
 import com.example.test.service.VtsAttachmentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -26,6 +23,11 @@ public class VtsAttachmentController {
     @GetMapping("/selectById")
     public RespResult<VtsAttachment> selectById (@RequestParam("id") Long id){
         return RespResult.success(vtsAttachmentService.getById(id));
+    }
+
+    @PostMapping("/save")
+    public RespResult<Long> save (){
+        return RespResult.success(vtsAttachmentService.saveTest());
     }
 
 }

@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface VtsAttachmentService extends IService<VtsAttachment> {
 
+    Long saveTest();
 }

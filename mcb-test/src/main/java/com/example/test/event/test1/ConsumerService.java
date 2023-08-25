@@ -1,8 +1,7 @@
-package com.example.test.event;
+package com.example.test.event.test1;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.event.EventListener;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,13 +13,13 @@ import org.springframework.stereotype.Service;
 public class ConsumerService {
 
 
-    @EventListener(condition = "#user.age >= 18")
-    @Async
+    @EventListener
     public void consumerObject (User user){
         System.out.println("消费User");
         try {
             System.out.println(Thread.currentThread().getName());
-            Thread.sleep(5000);
+            user.getList().add(user.getAge());
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
