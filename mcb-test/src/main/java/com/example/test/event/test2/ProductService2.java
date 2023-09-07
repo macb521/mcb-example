@@ -20,14 +20,15 @@ public class ProductService2 {
 
 
     public void send (){
-        List<Integer> list = Lists.newArrayList(13,15);
+        List<Integer> list = Lists.newArrayList();
 
-        for (int i = 0; i < 10; i++) {
-            applicationContext.publishEvent(new TestEvent(this,i,list));
-            System.out.println("--------------------");
-            System.out.println(list);
-            System.out.println("--------------------");
+        for (int i = 0; i < 40; i++) {
+            list.add(i);
+
         }
 
+        for (int i = 0; i < 3; i++) {
+            applicationContext.publishEvent(new TestEvent(this,i,list));
+        }
     }
 }

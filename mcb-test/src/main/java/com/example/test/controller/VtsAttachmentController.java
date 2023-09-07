@@ -30,4 +30,10 @@ public class VtsAttachmentController {
         return RespResult.success(vtsAttachmentService.saveTest());
     }
 
+    @GetMapping("/async_test")
+    public RespResult<Void> asyncTest (){
+        vtsAttachmentService.asyncTest();
+        return RespResult.success();
+    }
+
 }

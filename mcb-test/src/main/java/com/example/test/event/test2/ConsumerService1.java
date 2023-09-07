@@ -14,33 +14,32 @@ import java.util.stream.Collectors;
  */
 @Service
 @RequiredArgsConstructor
-@ConditionalOnProperty(value = {"c2.enabled"}, havingValue = "true", matchIfMissing = true)
-public class ConsumerService2 extends BaseConsumer{
+@ConditionalOnProperty(value = {"c1.enabled"}, havingValue = "true", matchIfMissing = true)
+public class ConsumerService1 extends BaseConsumer {
 
 
 
 
     @Override
-    @Async
     public void onApplicationEvent(TestEvent event) {
         List<Integer> collect = event.getList().stream().filter(this::filter).collect(Collectors.toList());
 
-        System.out.println("------------------cousumer2-------------------start");
+        System.out.println("------------------cousumer1-------------------start");
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("cousumer2" + Thread.currentThread().getName());
-        System.out.println("cousumer2" + collect);
-        System.out.println("cousumer2" + event.getAa());
+        System.out.println("cousumer1" + Thread.currentThread().getName());
+        System.out.println( "cousumer1" + collect);
+        System.out.println("cousumer1" + event.getAa());
         System.out.println("cousumer3" + test());
-        System.out.println("------------------cousumer2-------------------end");
+        System.out.println("------------------cousumer1-------------------end");
 
     }
 
     @Override
     public boolean filter(Integer integer) {
-        return 3 < integer && integer <= 6;
+        return integer <= 3;
     }
 }
