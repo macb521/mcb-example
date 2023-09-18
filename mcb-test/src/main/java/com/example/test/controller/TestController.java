@@ -34,4 +34,16 @@ public class TestController {
     }
 
 
+    @PostMapping("test1")
+    @ApiOperation(value = "测试接口")
+    @SneakyThrows(Exception.class)
+    public RespResult<Void> test1 (@RequestBody TestReq req){
+        TestResp resp = new TestResp();
+        resp.setName("张三");
+        resp.setAge(19);
+        resp.setBirthday(DateUtils.parseDate("1995-09-06", DatePattern.NORM_DATE_PATTERN));
+        return RespResult.success();
+    }
+
+
 }

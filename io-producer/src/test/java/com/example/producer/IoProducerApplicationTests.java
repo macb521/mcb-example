@@ -1,10 +1,10 @@
-package com.example.ioconsumer;
+package com.example.producer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class IoConsumerApplicationTests {
+class IoProducerApplicationTests {
 
 	@Test
 	void contextLoads() {

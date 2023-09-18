@@ -15,7 +15,7 @@ public class Test {
 
     @SneakyThrows(Exception.class)
     public static void main(String[] args) {
-        List<TestModel> testModels = test1("C:\\Users\\chunbo.ma.o\\Desktop\\副本测试2.csv");
+        List<TestModel> testModels = test1("C:\\Users\\chunbo.ma.o\\Documents\\WeChat Files\\wxid_mpgcfm71ch9422\\FileStorage\\File\\2023-08\\20230727_暖哇核保风控反馈(1).csv");
 
         testModels.forEach(System.out::println);
     }

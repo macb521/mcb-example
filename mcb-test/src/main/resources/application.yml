@@ -6,3 +6,22 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://dd-mysql-01-dev.nioint.com:3306/ndplm_vts_dev?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+    username: ndplm_vts_dev_rw
+    password: ph7eHUxrGSp9RQAkXVdJ
+    #添加 Druid 配置，指定数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+
+# mybatis-plus配置
+mybatis-plus:
+  # MyBatis Mapper所对应的XML文件位置
+  # 如果XML在多个jar包下，扫描路径需以classpath*: 开头，即加载多个jar包下的XML文件。
+  mapper-locations: classpath*:/mapper/**/*Mapper.xml
+  configuration:
+    # Mybatis二级缓存，默认为true。
+    cache-enabled: false
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+  type-handlers-package: com.nio.ps.vts.service.domain.handler
