@@ -23,6 +23,7 @@ public class MybatisCodeGenerator {
         String pwd = "ph7eHUxrGSp9RQAkXVdJ";
         String author = "chunbo.ma";
         //项目路径
+        //测试提交1
         String projectPath = System.getProperty("user.dir");
         //basePage
         String basePage = "com.example.test";
