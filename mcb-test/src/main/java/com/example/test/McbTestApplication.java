@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class McbTestApplication {
 
     public static void main(String[] args) {
+        //test111
         SpringApplication.run(McbTestApplication.class, args);
     }
 
