@@ -24,6 +24,7 @@ public class MybatisCodeGenerator {
         String author = "chunbo.ma";
         //项目路径
         //测试提交1
+        //测试提交2
         String projectPath = System.getProperty("user.dir");
         //basePage
         String basePage = "com.example.test";
