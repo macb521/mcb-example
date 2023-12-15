@@ -5,6 +5,7 @@ import com.example.test.event.test1.ProducerService;
 import com.example.test.event.test2.ProductService2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023/8/10
  */
 @RestController
+@RequestMapping("/event")
 public class EventController {
     @Autowired
     private ProducerService producerService;

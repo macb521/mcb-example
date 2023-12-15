@@ -14,6 +14,8 @@ spring:
     password: ph7eHUxrGSp9RQAkXVdJ
     #添加 Druid 配置，指定数据源
     type: com.alibaba.druid.pool.DruidDataSource
+  main:
+    allow-circular-references: true
 
 # mybatis-plus配置
 mybatis-plus:
