@@ -1,62 +1,66 @@
 package com.example.mcbcommon.exception;
 
+import com.example.mcbcommon.result.ResultCode;
+import com.example.mcbcommon.result.ResultCodeEnum;
+
 /**
  * @author chunbo.ma.o
  * @since 2023/11/27
  */
-public final class ServiceException extends RuntimeException {
+public  class ServiceException extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 错误码
-     */
-    private Integer code;
+    private final String code;
 
-    /**
-     * 错误提示
-     */
-    private String message;
-
-    /**
-     * 错误明细，内部调试错误
-     */
-    private String detailMessage;
-
-    /**
-     * 空构造方法，避免反序列化问题
-     */
     public ServiceException() {
+        super(ResultCodeEnum.ERROR.getMessage());
+        this.code = ResultCodeEnum.ERROR.getCode();
     }
 
-    public ServiceException(String message) {
-        this.message = message;
+    public ServiceException(ResultCode resultCode) {
+        super(resultCode.getMessage());
+        this.code = resultCode.getCode();
     }
 
-    public ServiceException(String message, Integer code) {
-        this.message = message;
+    public ServiceException(ResultCode resultCode, String appendMessage) {
+        super(resultCode.getMessage() + "," + appendMessage);
+        this.code = resultCode.getCode();
+    }
+
+    public ServiceException(ResultCode resultCode, Throwable e) {
+        super(resultCode.getMessage() + "," + e.getMessage(), e);
+        this.code = resultCode.getCode();
+    }
+
+    public ServiceException(String code, String message) {
+        super(message);
         this.code = code;
     }
 
-    public ServiceException(String message, String detailMessage) {
-        this.message = message;
-        this.detailMessage = detailMessage;
+    public ServiceException(String message) {
+        super(message);
+        this.code = ResultCodeEnum.ERROR.getCode();
     }
 
-    public String getDetailMessage() {
-        return detailMessage;
+    public ServiceException(String message, Throwable e) {
+        super(message, e);
+        this.code = ResultCodeEnum.ERROR.getCode();
     }
 
-    @Override
-    public String getMessage() {
-        return message;
+    public ServiceException(String code, String message, Throwable e) {
+        super(message, e);
+        this.code = code;
     }
 
-    public Integer getCode() {
-        return code;
+    public String getCode() {
+        return this.code;
     }
 
-    public ServiceException setMessage(String message) {
-        this.message = message;
-        return this;
+    public static ServiceException error(String message) {
+        return new ServiceException(ResultCodeEnum.ERROR, message);
+    }
+
+    public static ServiceException errorParameter(String message) {
+        return new ServiceException(ResultCodeEnum.PARAMETER_ERROR, message);
     }
 }

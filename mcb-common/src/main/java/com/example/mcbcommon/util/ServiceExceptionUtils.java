@@ -1,6 +1,7 @@
 package com.example.mcbcommon.util;
 
 import com.example.mcbcommon.exception.ServiceException;
+import com.example.mcbcommon.result.ResultCode;
 
 /**
  * @author chunbo.ma.o
@@ -36,5 +37,14 @@ public class ServiceExceptionUtils {
 
     public static void create(String messageKey) throws ServiceException {
         throw new ServiceException(messageKey);
+    }
+
+
+    public static void create(String code, String message) throws ServiceException {
+        throw new ServiceException(code, message);
+    }
+
+    public static void create(ResultCode resultCode) throws ServiceException {
+        throw new ServiceException(resultCode);
     }
 }
