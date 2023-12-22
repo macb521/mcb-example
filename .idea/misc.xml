@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/mcb-parent/pom.xml" />
         <option value="$PROJECT_DIR$/io-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/io-producer/pom.xml" />
+        <option value="$PROJECT_DIR$/mcb-gateway/pom.xml" />
       </list>
     </option>
   </component>

@@ -1,0 +1,15 @@
+server:
+  port: 20010
+spring:
+  application:
+    name: mcb-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: test-route
+          uri: http://localhost:10097
+          predicates:
+            - Path=/api/test/**
+      enabled: true
+  main:
+    web-application-type: reactive

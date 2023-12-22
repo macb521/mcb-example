@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @Api(tags = "hello测试接口")
-@RequestMapping("/test")
+@RequestMapping("/api/test")
 public class TestController {
 
     @PostMapping("test")
@@ -46,6 +46,12 @@ public class TestController {
         resp.setBirthday(DateUtils.parseDate("1995-09-06", DatePattern.NORM_DATE_PATTERN));
         return RespResult.success();
     }
-
+    @PostMapping("test2")
+    @ApiOperation(value = "测试接口")
+    @SneakyThrows(Exception.class)
+    public RespResult<Void> test2 (@RequestBody TestReq req){
+        System.out.println("test22222222222222222222222222222222");
+        return RespResult.success();
+    }
 
 }
