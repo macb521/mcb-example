@@ -42,42 +42,11 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @Api(tags = "hello测试接口")
-@RequestMapping("/api/test")
-public class TestController {
-
-    @PostMapping("test")
-    @ApiOperation(value = "测试接口")
-    @SneakyThrows(Exception.class)
-    public RespResult<TestResp> test(@RequestBody TestReq req) {
-        TestResp resp = new TestResp();
-        resp.setName("张三");
-        resp.setAge(19);
-        resp.setBirthday(DateUtils.parseDate("1995-09-06", DatePattern.NORM_DATE_PATTERN));
-        return RespResult.success(resp);
-    }
-
-
-    @PostMapping("test1")
-    @ApiOperation(value = "测试接口")
-    @SneakyThrows(Exception.class)
-    public RespResult<Void> test1(@RequestBody TestReq req) {
-        TestResp resp = new TestResp();
-        resp.setName("张三");
-        resp.setAge(19);
-        resp.setBirthday(DateUtils.parseDate("1995-09-06", DatePattern.NORM_DATE_PATTERN));
-        return RespResult.success();
-    }
-
-    @PostMapping("test2")
-    @ApiOperation(value = "测试接口")
-    @SneakyThrows(Exception.class)
-    public RespResult<Void> test2(@RequestBody TestReq req) {
-        System.out.println("test22222222222222222222222222222222");
-        return RespResult.success();
-    }
+@RequestMapping("/api/excel")
+public class ExcelTestController {
 
     @PostMapping("test3")
-    @ApiOperation(value = "测试接口")
+    @ApiOperation(value = "根据模板写入")
     @SneakyThrows(Exception.class)
     public void test3(HttpServletResponse response) {
         InputStreamSource resource = DownloadUtil.getResource("classpath:template/test template-3.xlsx");
