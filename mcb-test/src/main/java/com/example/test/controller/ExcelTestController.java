@@ -1,31 +1,25 @@
 package com.example.test.controller;
 
-import cn.hutool.core.date.DatePattern;
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelWriter;
 import com.alibaba.excel.write.merge.OnceAbsoluteMergeStrategy;
 import com.alibaba.excel.write.metadata.WriteSheet;
 import com.alibaba.excel.write.style.column.SimpleColumnWidthStyleStrategy;
 import com.alibaba.excel.write.style.row.SimpleRowHeightStyleStrategy;
-import com.example.mcbcommon.result.RespResult;
 import com.example.test.excel.TestImportModel;
 import com.example.test.excel.TestImportModel2;
-import com.example.test.req.TestReq;
-import com.example.test.resp.TestResp;
 import com.example.test.util.DownloadUtil;
 import com.google.common.collect.Lists;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
-import org.apache.commons.lang3.time.DateUtils;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.core.io.InputStreamSource;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -51,7 +45,7 @@ public class ExcelTestController {
     public void test3(HttpServletResponse response) {
         InputStreamSource resource = DownloadUtil.getResource("classpath:template/test template-3.xlsx");
         XSSFWorkbook write = write(resource.getInputStream());
-        DownloadUtil.downloadConfig("test template-3.xlsx", response);
+        DownloadUtil.responseConfig("test template-3.xlsx", response);
 
         OutputStream toClient = new BufferedOutputStream(response.getOutputStream());
         write.write(toClient);
@@ -78,12 +72,17 @@ public class ExcelTestController {
     public void test4(HttpServletResponse response) {
         InputStreamSource resource = DownloadUtil.getResource("classpath:template/test template-4.xlsx");
 
-        InputStream inputStream = resource.getInputStream();
         //本地导出
-        //excelWriter = EasyExcel.write(fileName).withTemplate(templateFileName).build();
-        //流输出
-        DownloadUtil.downloadConfig("test template-4.xlsx", response);
-        EasyExcel.write(response.getOutputStream()).withTemplate(inputStream).sheet().doWrite(getData());
+        /*excelWriter = EasyExcel.write(fileName).withTemplate(templateFileName).build();*/
+
+        // 流输出
+        InputStream inputStream = resource.getInputStream();
+
+        DownloadUtil.responseConfig("test template-4.xlsx", response);
+
+        EasyExcel.write(response.getOutputStream()).withTemplate(inputStream).sheet().doFill(getData());
+
+
     }
 
 
@@ -93,7 +92,7 @@ public class ExcelTestController {
     public void test5(HttpServletResponse response) {
 
         //本地导出
-        //excelWriter = EasyExcel.write(fileName).withTemplate(templateFileName).build();
+        /*excelWriter = EasyExcel.write(fileName).withTemplate(templateFileName).build();*/
         //流输出
         try (ExcelWriter excelWriter = EasyExcel.write(response.getOutputStream()).autoCloseStream(Boolean.FALSE)
                 .registerWriteHandler(new SimpleColumnWidthStyleStrategy(20))
@@ -107,7 +106,7 @@ public class ExcelTestController {
             WriteSheet writeSheet2 = EasyExcel.writerSheet(1, "error").head(TestImportModel2.class).build();
             excelWriter.write(getData2(), writeSheet2);
 
-            DownloadUtil.downloadConfig("test template-sheets.xlsx", response);
+            DownloadUtil.responseConfig("test template-sheets.xlsx", response);
 
             excelWriter.finish();
         }
@@ -118,7 +117,7 @@ public class ExcelTestController {
     @SneakyThrows(Exception.class)
     public void test6(HttpServletResponse response) {
 
-        DownloadUtil.downloadConfig("test-merge.xlsx", response);
+        DownloadUtil.responseConfig("test-merge.xlsx", response);
 
         //第二行的3-5列合并
         OnceAbsoluteMergeStrategy onceAbsoluteMergeStrategy = new OnceAbsoluteMergeStrategy(1, 1, 2, 4);
@@ -129,7 +128,8 @@ public class ExcelTestController {
     private List<TestImportModel2> getData2() {
         List<TestImportModel2> list = Lists.newArrayList();
 
-        for (int i = 0; i < 10; i++) {
+        int dataSize = 10;
+        for (int i = 0; i < dataSize; i++) {
             TestImportModel2 testImportModel2 = new TestImportModel2();
             testImportModel2.setId("aa" + i);
 
@@ -164,8 +164,8 @@ public class ExcelTestController {
 
     private List<TestImportModel> getData() {
         List<TestImportModel> list = Lists.newArrayList();
-
-        for (int i = 0; i < 10; i++) {
+        int dataSize = 10;
+        for (int i = 0; i < dataSize; i++) {
             TestImportModel testImportModel = new TestImportModel();
             testImportModel.setAaa("a" + i);
             testImportModel.setBbb("b" + i);

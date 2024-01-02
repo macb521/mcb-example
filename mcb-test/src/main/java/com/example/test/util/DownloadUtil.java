@@ -32,7 +32,7 @@ public class DownloadUtil {
     }
 
 
-    public static void downloadConfig(String filename, HttpServletResponse response) throws UnsupportedEncodingException {
+    public static void responseConfig(String filename, HttpServletResponse response) throws UnsupportedEncodingException {
         //创建流对象
         response.reset();
         String newName = URLEncoder.encode(filename, "UTF-8");

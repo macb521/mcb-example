@@ -25,6 +25,8 @@ public class Test1 {
         System.out.println(predictNo(Lists.newArrayList("0999", "0099", "88")));
     }
 
+
+
     /**
      * list -> 最大四位，数字前边可以填0，取最大值（相等时，取前边0少的为准）
      *
