@@ -1,6 +1,7 @@
 package com.example.test.test;
 
 import com.google.common.collect.Lists;
+import org.apache.commons.lang3.StringUtils;
 
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -20,26 +21,49 @@ public class UriTest {
     }
 
 
-    private static void dataTest (){
-        ArrayList<String> list = Lists.newArrayList("aa","aa aa","www.baidu.com","https://widenius.nioint.com/sql_query/sqlquery/");
+    private static void dataTest() {
+        ArrayList<String> list = Lists.newArrayList("aa",
+                "aa aa", "https://wideniu「『s.nioint.com/sql_query/sqlquery/",
+                "https://wideniu    s.nioint.com/sql_query/sqlquery/");
         for (String s : list) {
-            try {
-                uriCheck(s);
-            } catch (URISyntaxException e) {
+
+            if (!uriCheck(s)) {
                 System.out.println("uri -- error:" + s);
             }
-            try {
-                urlCheck(s);
-            } catch (MalformedURLException e) {
+
+            if (!urlCheck(s)) {
                 System.out.println("url -- error:" + s);
+            }
+
+            if (!regexCheck(s)) {
+                System.out.println("regx -- error:" + s);
             }
         }
     }
 
-    private static void uriCheck (String s) throws URISyntaxException {
-        new URI(s);
+    private static boolean uriCheck(String s) {
+        try {
+            new URI(s);
+            return true;
+        } catch (URISyntaxException e) {
+            return false;
+        }
     }
-    private static void urlCheck (String s) throws MalformedURLException {
-        new URL(s);
+
+    private static boolean urlCheck(String s) {
+        try {
+            new URL(s);
+            return true;
+        } catch (MalformedURLException e) {
+            return false;
+        }
+    }
+
+    private static boolean regexCheck(String s) {
+        if (StringUtils.isBlank(s)) {
+            return false;
+        }
+        String regex = "^(http|https)://([\\w-]+\\.)+[\\w-]+(/[\\w-./?%&=]*)?$";
+        return s.matches(regex);
     }
 }

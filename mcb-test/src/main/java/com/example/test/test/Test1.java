@@ -18,7 +18,7 @@ public class Test1 {
 
     private static void test1() {
 
-        System.out.println(predictNo(Lists.newArrayList("0000", "00", "000")));
+        System.out.println(predictNo(Lists.newArrayList("0000", "00", "000","0")));
         System.out.println(predictNo(Lists.newArrayList("0")));
         System.out.println(predictNo(Lists.newArrayList("099", "0099", "88")));
         System.out.println(predictNo(Lists.newArrayList("0999", "999", "88")));

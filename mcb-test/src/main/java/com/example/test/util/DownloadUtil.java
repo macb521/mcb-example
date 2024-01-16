@@ -35,8 +35,8 @@ public class DownloadUtil {
     public static void responseConfig(String filename, HttpServletResponse response) throws UnsupportedEncodingException {
         //创建流对象
         response.reset();
-        String newName = URLEncoder.encode(filename, "UTF-8");
-        response.addHeader(HttpHeaders.CONTENT_DISPOSITION, RESPONSE_ATTACHMENT + newName + "\"");
+//        String newName = URLEncoder.encode(filename, "UTF-8");
+        response.addHeader(HttpHeaders.CONTENT_DISPOSITION, RESPONSE_ATTACHMENT + filename + "\"");
 
         response.addHeader(HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS, HttpHeaders.CONTENT_DISPOSITION);
         response.setCharacterEncoding("UTF-8");
