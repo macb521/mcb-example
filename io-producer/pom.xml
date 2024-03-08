@@ -13,8 +13,14 @@
 	<description>io-producer</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<mcb-common.version>0.0.1-RELEASE</mcb-common.version>
 	</properties>
 	<dependencies>
+<!--		<dependency>-->
+<!--			<groupId>com.example</groupId>-->
+<!--			<artifactId>mcb-common</artifactId>-->
+<!--			<version>${mcb-common.version}</version>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
@@ -33,6 +39,14 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-stream-kafka</artifactId>
 			<version>4.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 	</dependencies>
 

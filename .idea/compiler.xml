@@ -8,24 +8,26 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="io-producer" />
+        <module name="io-consumer2" />
         <module name="mcb-test" />
         <module name="io-consumer" />
         <module name="mcb-common" />
-        <module name="mcb-refactor" />
         <module name="mcb-gateway" />
+        <module name="mcb-refactor" />
         <module name="mcb-design" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="io-consumer" target="1.8" />
-      <module name="io-producer" target="1.8" />
+      <module name="io-consumer" target="8" />
+      <module name="io-consumer2" target="8" />
+      <module name="io-producer" target="8" />
       <module name="mcb-common" target="1.8" />
       <module name="mcb-dependencies" target="1.5" />
-      <module name="mcb-design" target="1.8" />
+      <module name="mcb-design" target="8" />
       <module name="mcb-gateway" target="1.8" />
       <module name="mcb-parent" target="1.8" />
-      <module name="mcb-refactor" target="1.8" />
-      <module name="mcb-test" target="1.8" />
+      <module name="mcb-refactor" target="8" />
+      <module name="mcb-test" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
