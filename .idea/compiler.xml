@@ -18,16 +18,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="io-consumer" target="8" />
-      <module name="io-consumer2" target="8" />
-      <module name="io-producer" target="8" />
-      <module name="mcb-common" target="1.8" />
       <module name="mcb-dependencies" target="1.5" />
-      <module name="mcb-design" target="8" />
-      <module name="mcb-gateway" target="1.8" />
-      <module name="mcb-parent" target="1.8" />
-      <module name="mcb-refactor" target="8" />
-      <module name="mcb-test" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
